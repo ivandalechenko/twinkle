@@ -30,7 +30,6 @@
     margin: 0 auto;
     border: 8px solid #78708D;
     box-shadow: 0px 0px 40px #0004;
-    margin-top: 40px;
     z-index: 9999;
 
 }
@@ -39,8 +38,14 @@
     background: url('/img/hero.jpg');
     min-height: 100vh;
     padding-bottom: 60px;
-    background-position: center;
+    background-position: 50%;
     background-size: cover;
+    padding-top: 20px;
+
+    @media(max-width: 800px) {
+        min-height: 50vh;
+        padding-bottom: 500px;
+    }
 
     @media (max-aspect-ratio: 1/1) {
         background-position: 70%;
@@ -174,6 +179,11 @@
     background: url('/img/floor.jpg');
     background-position: center;
     background-size: cover;
+
+    @media(max-width: 800px) {
+        min-height: 50vh;
+    }
+
 }
 
 .house {
@@ -183,6 +193,11 @@
     background: url('/img/house.jpg');
     background-position: center;
     background-size: cover;
+
+    @media(max-width: 800px) {
+        min-height: 50vh;
+    }
+
 }
 
 .snow {
