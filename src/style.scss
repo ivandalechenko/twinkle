@@ -1,5 +1,5 @@
-@import 'null';
-@import 'fonts';
+@use 'null';
+@use 'fonts';
 
 .app {
     overflow: hidden;
@@ -65,6 +65,16 @@
         line-height: 200px;
         text-shadow: 20.00px 0.00px #78708D, 19.02px 6.18px #78708D, 16.18px 11.76px #78708D, 11.76px 16.18px #78708D, 6.18px 19.02px #78708D, 0.00px 20.00px #78708D, -6.18px 19.02px #78708D, -11.76px 16.18px #78708D, -16.18px 11.76px #78708D, -19.02px 6.18px #78708D, -20.00px 0.00px #78708D, -19.02px -6.18px #78708D, -16.18px -11.76px #78708D, -11.76px -16.18px #78708D, -6.18px -19.02px #78708D, -0.00px -20.00px #78708D, 6.18px -19.02px #78708D, 11.76px -16.18px #78708D, 16.18px -11.76px #78708D, 19.02px -6.18px #78708D, 0px 0px 40px #0004;
         letter-spacing: 15px;
+
+        @media(max-width: 900px) {
+            font-size: 200px;
+            letter-spacing: 10px;
+        }
+
+        @media(max-width: 600px) {
+            font-size: 100px;
+            letter-spacing: 5px;
+        }
     }
 
     &_ca {
@@ -89,17 +99,39 @@
             align-content: inherit;
             justify-content: center;
             column-gap: 20px;
-            background: #fff;
+            background-color: #fff;
             border-radius: 24px;
             border: 8px solid #78708D;
             color: #78708D;
             padding: 16px 24px;
             font-size: 38px;
             box-shadow: 0px 0px 40px #0004;
+            transition: 200ms background-color, 200ms color;
+            letter-spacing: 1px;
 
             span {
+                transition: 200ms background-color, 200ms color;
                 color: #78708D;
             }
+
+            &:hover {
+                background-color: #78708D;
+                color: #fff;
+                cursor: pointer;
+
+                span {
+                    color: #fff;
+                }
+            }
+
+            @media(max-width: 800px) {
+                font-size: 24px;
+            }
+
+            @media(max-width: 600px) {
+                font-size: 12px;
+            }
+
         }
     }
 
@@ -116,6 +148,14 @@
         position: relative;
         z-index: 99;
         box-shadow: 0px 0px 40px #0004;
+
+        transition: 200ms background-color, 200ms color;
+
+        &:hover {
+            background-color: #78708D;
+            color: #fff;
+            cursor: pointer;
+        }
 
         &_text {
             font-size: 50px;
@@ -148,6 +188,7 @@
 .snow {
     position: fixed;
     pointer-events: none;
+    z-index: 99999999999999;
 }
 
 .buy {
@@ -155,7 +196,6 @@
     background: #58506D;
 
     &_inner {
-
         margin: 0 auto;
         width: fit-content;
         background: #fff;
@@ -168,6 +208,14 @@
         position: relative;
         z-index: 99;
         box-shadow: 0px 0px 40px #0004;
+
+        transition: 200ms background-color, 200ms color;
+
+        &:hover {
+            background-color: #78708D;
+            color: #fff;
+            cursor: pointer;
+        }
     }
 
     &_text {
